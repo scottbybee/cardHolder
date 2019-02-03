@@ -1,0 +1,41 @@
+module cell (){
+difference(){
+    difference(){
+        minkowski(){
+            cube([6.5,9,1]);
+            cylinder(4,d1=3,d2=2);
+        }        
+        translate([0,0,1]){
+            union(){
+                minkowski(){
+                    cube([6.5,9,1]);
+                    cylinder(2.5,d1=0,d2=1.5);
+                }
+                translate([-1.25,-1.5,2.5]){
+                    cube([9,12,2]);
+                }
+            }
+        }
+    }
+    union(){
+        translate([3.25,-4,4]){
+            rotate([270,0,0]){
+                cylinder(32,d=7);
+            }
+        }
+        translate([10,4.5,4]){
+            rotate([270,0,90]){
+                cylinder(32,d=7);
+            }
+        }
+    }
+}
+}
+
+$fn=100;
+union(){
+    cell();
+    translate([8.5,0,0]){
+        cell();
+    }
+}

@@ -1,0 +1,28 @@
+$fn=100;
+difference(){
+    difference(){
+        minkowski(){
+        cube([6.5,9,1]);
+        cylinder(4,d1=2,d2=0);
+        }
+        translate([0,0,.5]){
+            minkowski(){
+            cube([6.5,9,1]);
+            cylinder(4,d1=0,d2=1);
+            }
+        }
+    }
+    union(){
+        translate([3.25,-4,4]){
+            rotate([270,0,0]){
+                cylinder(32,d=7);
+            }
+        }
+        translate([10,4.5,4]){
+            rotate([270,0,90]){
+                cylinder(32,d=7);
+            }
+        }
+    }
+}
+
